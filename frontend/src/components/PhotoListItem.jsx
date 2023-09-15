@@ -1,23 +1,16 @@
-import React from "react";
-
+import React, { useState } from "react";
+import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
-
-// moved to App.jsx
-// const sampleDataForPhotoListItem = {
-//   id: "1",
-//   location: {
-//     city: "Montreal",
-//     country: "Canada",
-//   },
-//   imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-//   username: "Joe Example",
-//   profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-// };
 
 const PhotoListItem = (props) => {
   /* Insert React */
+  const [favourite, setFavourite] = useState(false);
+  
+  const toggleFavourite = () => setFavourite(favourite => !favourite);
+
   return (
     <div className="photo-list__item">
+      <PhotoFavButton favBool={favourite} switchFavourite={toggleFavourite}/>
       <img className="photo-list__image" src={props.imageSource}></img>
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={props.profile}></img>

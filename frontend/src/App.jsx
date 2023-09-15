@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PhotoListItem from './components/PhotoListItem';
+import PhotoFavButton from 'components/PhotoFavButton';
 import './App.scss';
 
 // data
@@ -26,7 +27,9 @@ const listOfPhoto = photosObject.map((photo, index) => {
       username={photo.username}
       profile={photo.profile}
       city={photo.location.city}
-      country={photo.location.country}/>
+      country={photo.location.country}
+      favBool={false}
+      />
   )
 })
 
@@ -36,6 +39,7 @@ const App = () => {
     <div className="App">
       {listOfPhoto}
     </div>
+
   );
 };
 
