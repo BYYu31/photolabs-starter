@@ -4,13 +4,9 @@ import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
   /* Insert React */
-  const [favourite, setFavourite] = useState(false);
-  
-  const toggleFavourite = () => setFavourite(favourite => !favourite);
-
   return (
     <div className="photo-list__item">
-      <PhotoFavButton favBool={favourite} switchFavourite={toggleFavourite}/>
+      <PhotoFavButton />
       <img className="photo-list__image" src={props.imageSource}></img>
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={props.profile}></img>
