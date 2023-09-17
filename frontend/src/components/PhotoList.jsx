@@ -60,24 +60,24 @@ import "../styles/PhotoList.scss";
 //   },
 // ];
 
-const listOfPhoto = photos.map(photo => {
-  return (
-    <PhotoListItem
-      key={photo.id}
-      imageSource={photo.urls.full}
-      username={photo.user.username}
-      profile={photo.user.profile}
-      city={photo.location.city}
-      country={photo.location.country}
-    />
-  )
-})
-
-const PhotoList = () => {
+const PhotoList = ( {favouriteList} ) => {
 
   return (
     <ul className="photo-list">
-      {listOfPhoto}
+      {photos.map(photo => {
+        return (
+          <PhotoListItem
+            key={photo.id}
+            photo={photo}
+            favouriteList={favouriteList}
+            imageSource={photo.urls.full}
+            username={photo.user.username}
+            profile={photo.user.profile}
+            city={photo.location.city}
+            country={photo.location.country}
+          />
+        )
+      })}
     </ul>
   );
 };
