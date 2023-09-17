@@ -1,8 +1,7 @@
 import React from 'react';
-
-import PhotoList from 'components/PhotoList';
+import HomeRoute from 'routes/HomeRoute';
 import './App.scss';
-import TopNavigation from 'components/TopNavigationBar';
+
 
 // data
 // const sampleDataForPhotoListItem = {
@@ -40,9 +39,7 @@ const App = () => {
   return (
     <div className="App">
       {/* {listOfPhoto} */}
-      <TopNavigation/>
-      <PhotoList/>
-
+      <HomeRoute/>
     </div>
 
   );
