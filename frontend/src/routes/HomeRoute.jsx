@@ -3,7 +3,9 @@ import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = () => {
+const HomeRoute = (props) => {
+
+  const { photoSelected } = props;
 
   const [favouriteList, setFavouriteList] = useState([]);
   const [newFavourite, setNewFavourite] = useState(false);
@@ -21,7 +23,7 @@ const HomeRoute = () => {
   return (
     <div className="home-route">
         <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteList.length}/>
-        <PhotoList favouriteList={updateFavouriteList}/>
+        <PhotoList favouriteList={updateFavouriteList} photoSelected={photoSelected}/>
     </div>
   );
 };
