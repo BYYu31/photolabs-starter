@@ -27,20 +27,23 @@
 .photo-details-modal__images {
   margin-left: 36px;
   margin-top: 8px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .photo-details-modal__image {
-  max-width: 95%;
-  border-radius: 8px;
+  max-width: 100%;
+  margin-left: 75px;
+  margin-right: 75px;
+  margin-bottom: 5px;
 }
 
 .photo-details-modal__top-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   margin: 16px;
   margin-top: 8px;
-  align-items: center;
 }
 
 .photo-details-modal__photographer-details {
