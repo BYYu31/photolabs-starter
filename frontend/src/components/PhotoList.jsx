@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PhotoListItem from "./PhotoListItem";
 
 // mock data
@@ -8,11 +8,17 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
-  const { favouriteList, photoSelected } = props;
+  const { favouriteList, photoSelected, input } = props;
+
+  console.log('this is my input')
+  console.log(input)
+
+  const photoRender = photos || Object.values(input);
+
 
   return (
     <ul className="photo-list">
-      {photos.map(photo => {
+      {photoRender.map(photo => {
         return (
           <PhotoListItem
             key={photo.id}

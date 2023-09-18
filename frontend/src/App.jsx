@@ -8,11 +8,13 @@ const App = () => {
 
   const [ clickedPhoto, setClickedPhoto ] = useState();
 
+  const choosePhoto = photo => setClickedPhoto(photo);
+
   return (
     <div className="App">
       {/* {listOfPhoto} */}
-      <HomeRoute photoSelected={photo => setClickedPhoto(photo)}/>
-      {clickedPhoto && <PhotoDetailsModal removeClickedPhoto={() => setClickedPhoto()}/>}
+      <HomeRoute photoSelected={choosePhoto}/>
+      {clickedPhoto && <PhotoDetailsModal photoSelected={clickedPhoto} removeClickedPhoto={() => setClickedPhoto()}/>}
     </div>
 
   );
