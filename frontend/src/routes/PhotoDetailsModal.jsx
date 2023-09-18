@@ -7,12 +7,26 @@ import closeSymbol from '../assets/closeSymbol.svg';
 
 const PhotoDetailsModal = (props) => {
 
-  const { removeClickedPhoto, photoSelected } = props;
+  const { 
+          removeClickedPhoto, 
+          photoSelected,
+          favouriteList, 
+          setFavouriteList, 
+          newFavourite, 
+          setNewFavourite
+        } = props;
 
   const { location, similar_photos, urls, user } = photoSelected;
 
-  console.log(`similar photos are:`);
-  console.log(similar_photos)
+  const updateFavouriteList = photo => {
+    if (favouriteList.includes(photo)) {
+      setFavouriteList(prev => [...prev].filter(input => input !== photo));
+      setNewFavourite(false);
+    } else {
+      setFavouriteList(prev => [...prev, photo]);
+      setNewFavourite(true);
+    }
+  }
 
   return (
     <div className="photo-details-modal">
@@ -31,7 +45,12 @@ const PhotoDetailsModal = (props) => {
         <div className='photo-details-modal__header'>Similar Photos</div>
       </div>
 
-      <PhotoList input={similar_photos}/>
+      <PhotoList 
+        input={similar_photos}
+        favouriteList={updateFavouriteList} 
+        finalList={favouriteList}
+        photoSelected={photoSelected}
+      />
     </div>
   )
 };

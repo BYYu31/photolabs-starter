@@ -5,7 +5,17 @@ import '../styles/PhotoFavButton.scss';
 
 function PhotoFavButton(props) {
 
-  const { photo, favouriteList } = props;
+  const { 
+          photo, 
+          favouriteList,
+          finalList          
+        } = props;
+
+  console.log('this is the favouriteList vvvvvvv')
+  console.log(finalList)
+  console.log(photo)
+
+  const includedInList = finalList.includes(photo) ? true : false;
 
   const [favourite, setFavourite] = useState(false);
   
@@ -14,7 +24,7 @@ function PhotoFavButton(props) {
   return (
     <div className="photo-list__fav-icon" onClick={toggleFavourite}>
       <div className="photo-list__fav-icon-svg" onClick={() => favouriteList(photo)}>
-      <FavIcon selected={favourite}/>
+      <FavIcon selected={includedInList}/>
       </div>
     </div>
   );

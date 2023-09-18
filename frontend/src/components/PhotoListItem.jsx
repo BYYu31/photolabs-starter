@@ -5,11 +5,25 @@ import "../styles/PhotoListItem.scss";
 const PhotoListItem = (props) => {
   /* Insert React */
 
-  const { photo, photoSelected, favouriteList, imageSource, username, profile, city, country } = props;
+  const { 
+          photo, 
+          photoSelected, 
+          favouriteList, 
+          finalList,
+          imageSource, 
+          username, 
+          profile,
+          city, 
+          country 
+        } = props;
 
   return (
     <div className="photo-list__item">
-      {<PhotoFavButton favouriteList={favouriteList} photo={photo}/>}
+      {<PhotoFavButton 
+        favouriteList={favouriteList} 
+        finalList={finalList}
+        photo={photo}
+      />}
       {<img className="photo-list__image" src={imageSource} onClick={() => photoSelected(photo)}></img>}
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={profile}></img>

@@ -5,10 +5,16 @@ import '../styles/HomeRoute.scss';
 
 const HomeRoute = (props) => {
 
-  const { photoSelected } = props;
+  const { 
+          photoSelected, 
+          favouriteList, 
+          setFavouriteList, 
+          newFavourite, 
+          setNewFavourite
+        } = props;
 
-  const [favouriteList, setFavouriteList] = useState([]);
-  const [newFavourite, setNewFavourite] = useState(false);
+  // const [favouriteList, setFavouriteList] = useState([]);
+  // const [newFavourite, setNewFavourite] = useState(false);
 
   const updateFavouriteList = photo => {
     if (favouriteList.includes(photo)) {
@@ -23,7 +29,11 @@ const HomeRoute = (props) => {
   return (
     <div className="home-route">
         <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteList.length}/>
-        <PhotoList favouriteList={updateFavouriteList} photoSelected={photoSelected}/>
+        <PhotoList 
+          finalList={favouriteList}
+          favouriteList={updateFavouriteList} 
+          photoSelected={photoSelected}
+        />
     </div>
   );
 };
