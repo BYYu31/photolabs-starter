@@ -6,25 +6,21 @@ import '../styles/HomeRoute.scss';
 const HomeRoute = () => {
 
   const [favouriteList, setFavouriteList] = useState([]);
+  const [newFavourite, setNewFavourite] = useState(false);
 
   const updateFavouriteList = photo => {
     if (favouriteList.includes(photo)) {
-      setFavouriteList((prev) => {
-        const index = prev.indexOf(photo);
-        const newFavouriteList = prev.splice(index, 1);
-        return newFavouriteList;
-      })
+      setFavouriteList(prev => [...prev].filter(input => input !== photo));
+      setNewFavourite(false);
     } else {
-      setFavouriteList(prev => {
-        const newFavouriteList = [...prev, photo];
-        return newFavouriteList;
-      })
+      setFavouriteList(prev => [...prev, photo]);
+      setNewFavourite(true);
     }
   }
 
   return (
     <div className="home-route">
-        <TopNavigation/>
+        <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteList.length}/>
         <PhotoList favouriteList={updateFavouriteList}/>
     </div>
   );
