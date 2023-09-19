@@ -9,14 +9,14 @@ const PhotoDetailsModal = (props) => {
 
   const { 
           removeClickedPhoto, 
-          photoSelected,
+          clickedPhoto,
           favouriteList, 
           setFavouriteList, 
           newFavourite, 
           setNewFavourite
         } = props;
 
-  const { location, similar_photos, urls, user } = photoSelected;
+  const { location, similar_photos, urls, user } = clickedPhoto;
 
   const updateFavouriteList = photo => {
     if (favouriteList.includes(photo)) {
@@ -49,7 +49,7 @@ const PhotoDetailsModal = (props) => {
           input={similar_photos}
           favouriteList={updateFavouriteList} 
           finalList={favouriteList}
-          photoSelected={photoSelected}
+          // photoSelected={clickedPhoto} did not use this state when and image is clicked
         />
 
     </div>

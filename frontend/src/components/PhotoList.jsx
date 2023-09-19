@@ -8,7 +8,12 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
-  const { finalList, favouriteList, setClickedPhoto, input } = props;
+  const { 
+          finalList, 
+          favouriteList, 
+          setClickedPhoto, 
+          input 
+        } = props;
 
   const photoRender = photos || Object.values(input);
 

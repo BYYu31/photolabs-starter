@@ -38,7 +38,7 @@ const App = (props) => {
       />
       {clickedPhoto && 
       <PhotoDetailsModal 
-        photoSelected={clickedPhoto} 
+        clickedPhoto={clickedPhoto} 
         removeClickedPhoto={() => setClickedPhoto()}
         favouriteList={favouriteList}
         setFavouriteList={setFavouriteList}
