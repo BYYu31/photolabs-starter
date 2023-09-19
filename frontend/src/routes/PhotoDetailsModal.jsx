@@ -51,6 +51,7 @@ const PhotoDetailsModal = (props) => {
           finalList={favouriteList}
           photoSelected={photoSelected}
         />
+
     </div>
   )
 };

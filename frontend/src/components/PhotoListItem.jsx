@@ -7,7 +7,7 @@ const PhotoListItem = (props) => {
 
   const { 
           photo, 
-          photoSelected, 
+          setClickedPhoto, 
           favouriteList, 
           finalList,
           imageSource, 
@@ -24,7 +24,7 @@ const PhotoListItem = (props) => {
         finalList={finalList}
         photo={photo}
       />}
-      {<img className="photo-list__image" src={imageSource} onClick={() => photoSelected(photo)}></img>}
+      {<img className="photo-list__image" src={imageSource} onClick={() => setClickedPhoto(photo)}></img>}
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={profile}></img>
         <div className="photo-list__user-info">

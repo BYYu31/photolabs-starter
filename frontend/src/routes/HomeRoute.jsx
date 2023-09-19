@@ -6,7 +6,7 @@ import '../styles/HomeRoute.scss';
 const HomeRoute = (props) => {
 
   const { 
-          photoSelected, 
+          setClickedPhoto, 
           favouriteList, 
           setFavouriteList, 
           newFavourite, 
@@ -32,7 +32,7 @@ const HomeRoute = (props) => {
         <PhotoList 
           finalList={favouriteList}
           favouriteList={updateFavouriteList} 
-          photoSelected={photoSelected}
+          setClickedPhoto={setClickedPhoto}
         />
     </div>
   );

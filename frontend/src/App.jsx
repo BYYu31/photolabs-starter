@@ -7,28 +7,30 @@ import './App.scss';
 // Note: Rendering a single component to build components in isolation
 const App = (props) => {
 
-  // const [clickedPhoto, setClickedPhoto] = useState();
-  // const [favouriteList, setFavouriteList] = useState([]);
-  // const [newFavourite, setNewFavourite] = useState(false);
-
-  const {
-    clickedPhoto,
-    setClickedPhoto,
-    choosePhoto,
-    favouriteList,
-    setFavouriteList,
-    newFavourite,
-    setNewFavourite
-  } = useApplicationData();
+  const [clickedPhoto, setClickedPhoto] = useState();
+  const [favouriteList, setFavouriteList] = useState([]);
+  const [newFavourite, setNewFavourite] = useState(false);
 
 
+  // use ApplicationData hook
+  // const {
+  //   clickedPhoto, //state
+  //   setClickedPhoto, //fn
+  //   choosePhoto, //fn
+  //   favouriteList,
+  //   setFavouriteList,
+  //   newFavourite,
+  //   setNewFavourite
+  // } = useApplicationData();
+
+  // superceded code
   // const choosePhoto = photo => setClickedPhoto(photo);
 
   return (
     <div className="App">
       {/* {listOfPhoto} */}
       <HomeRoute 
-        photoSelected={choosePhoto}
+        setClickedPhoto={setClickedPhoto}
         favouriteList={favouriteList}
         setFavouriteList={setFavouriteList}
         newFavourite={newFavourite}

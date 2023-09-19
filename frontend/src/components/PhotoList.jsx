@@ -8,7 +8,7 @@ import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
-  const { finalList, favouriteList, photoSelected, input } = props;
+  const { finalList, favouriteList, setClickedPhoto, input } = props;
 
   const photoRender = photos || Object.values(input);
 
@@ -20,7 +20,7 @@ const PhotoList = (props) => {
           <PhotoListItem
             key={photo.id}
             photo={photo}
-            photoSelected={photoSelected}
+            setClickedPhoto={setClickedPhoto}
             favouriteList={favouriteList}
             finalList={finalList}
             imageSource={photo.urls.full}
