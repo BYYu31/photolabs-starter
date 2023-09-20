@@ -8,7 +8,7 @@ const HomeRoute = (props) => {
   const { 
           setClickedPhoto, 
           favouriteList, 
-          favouriteNumberLength,
+          favouriteNumber,
           setFavouriteList, 
           updateFavouriteList,
           newFavourite, 
@@ -20,7 +20,7 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-        <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteNumberLength}/>
+        <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteNumber}/>
         <PhotoList 
           favouriteList={favouriteList}
           updateFavouriteList={updateFavouriteList} 

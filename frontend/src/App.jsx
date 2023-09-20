@@ -25,7 +25,7 @@ const App = (props) => {
     }
   }
 
-  const favouriteNumberLength = favouriteList.length;
+  const favouriteNumber = favouriteList.length;
 
   // use ApplicationData hook
   // const {
@@ -51,7 +51,7 @@ const App = (props) => {
         updateFavouriteList={updateFavouriteList}
         newFavourite={newFavourite}
         setNewFavourite={setNewFavourite}
-        favouriteNumberLength={favouriteNumberLength}
+        favouriteNumber={favouriteNumber}
       />
       {clickedPhoto && 
       <PhotoDetailsModal 
