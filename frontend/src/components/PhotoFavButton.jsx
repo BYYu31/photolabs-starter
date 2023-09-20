@@ -8,15 +8,10 @@ function PhotoFavButton(props) {
   const { 
           photo, 
           updateFavouriteList,
-          finalList          
+          favouriteList          
         } = props;
 
-  console.log('this is the favouriteList vvvvvvv')
-  console.log(finalList)
-  console.log('this is the photo objectvvvvvvvvvv')
-  console.log(photo)
-
-  const includedInList = finalList.includes(photo) ? true : false;
+  const includedInList = favouriteList.includes(photo) ? true : false;
 
   // const [favourite, setFavourite] = useState(false);
   
