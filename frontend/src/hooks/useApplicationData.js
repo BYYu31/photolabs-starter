@@ -5,16 +5,32 @@ export default function useApplicationData() {
   const [favouriteList, setFavouriteList] = useState([]);
   const [newFavourite, setNewFavourite] = useState(false);
 
-  const choosePhoto = photo => setClickedPhoto(photo);
+  // this is the function to close the modal
+  const removeClickedPhoto = () => setClickedPhoto();
+
+  // this is to update the favourite list
+  const updateFavouriteList = photo => {
+    if (favouriteList.includes(photo)) {
+      setFavouriteList(prev => [...prev].filter(input => input !== photo));
+      setNewFavourite(false);
+    } else {
+      setFavouriteList(prev => [...prev, photo]);
+      setNewFavourite(true);
+    }
+  }
+
+  const favouriteNumber = favouriteList.length;
 
   return {
     clickedPhoto,
     setClickedPhoto,
-    choosePhoto,
     favouriteList,
     setFavouriteList,
     newFavourite,
-    setNewFavourite
+    setNewFavourite,
+    removeClickedPhoto,
+    updateFavouriteList,
+    favouriteNumber    
   }
 }
 
