@@ -51,6 +51,7 @@ const App = (props) => {
         updateFavouriteList={updateFavouriteList}
         newFavourite={newFavourite}
         setNewFavourite={setNewFavourite}
+        favouriteNumberLength={favouriteNumberLength}
       />
       {clickedPhoto && 
       <PhotoDetailsModal 
