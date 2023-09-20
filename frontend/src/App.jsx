@@ -14,6 +14,8 @@ const App = (props) => {
   // this is the function to close the modal
   const removeClickedPhoto = () => setClickedPhoto();
 
+  const favouriteNumberLength = favouriteList.length;
+
   // use ApplicationData hook
   // const {
   //   clickedPhoto, //state
