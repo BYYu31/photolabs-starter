@@ -18,12 +18,13 @@ function PhotoFavButton(props) {
 
   const includedInList = finalList.includes(photo) ? true : false;
 
-  const [favourite, setFavourite] = useState(false);
+  // const [favourite, setFavourite] = useState(false);
   
-  const toggleFavourite = () => setFavourite(!favourite)
-
+  // const toggleFavourite = () => setFavourite(!favourite)
+  // also added onClick={toggleFavourite} superceded
+  
   return (
-    <div className="photo-list__fav-icon" onClick={toggleFavourite}>
+    <div className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg" onClick={() => updateFavouriteList(photo)}>
       <FavIcon selected={includedInList}/>
       </div>
