@@ -11,6 +11,7 @@ const App = (props) => {
   const [favouriteList, setFavouriteList] = useState([]);
   const [newFavourite, setNewFavourite] = useState(false);
 
+  const removeClickedPhoto = () => setClickedPhoto();
 
   // use ApplicationData hook
   // const {
@@ -39,7 +40,7 @@ const App = (props) => {
       {clickedPhoto && 
       <PhotoDetailsModal 
         clickedPhoto={clickedPhoto} 
-        removeClickedPhoto={() => setClickedPhoto()}
+        removeClickedPhoto={removeClickedPhoto}
         favouriteList={favouriteList}
         setFavouriteList={setFavouriteList}
         newFavourite={newFavourite}
