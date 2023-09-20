@@ -39,7 +39,7 @@ const PhotoDetailsModal = (props) => {
         <PhotoList className='photo-details-modal__images'
           input={similar_photos}
           updateFavouriteList={updateFavouriteList} 
-          finalList={favouriteList}
+          favouriteList={favouriteList}
           // photoSelected={clickedPhoto} did not use this state when and image is clicked
         />
 

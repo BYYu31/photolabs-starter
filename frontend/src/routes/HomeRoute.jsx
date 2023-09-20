@@ -22,7 +22,7 @@ const HomeRoute = (props) => {
     <div className="home-route">
         <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteNumberLength}/>
         <PhotoList 
-          finalList={favouriteList}
+          favouriteList={favouriteList}
           updateFavouriteList={updateFavouriteList} 
           setClickedPhoto={setClickedPhoto}
         />

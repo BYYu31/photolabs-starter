@@ -9,7 +9,7 @@ import "../styles/PhotoList.scss";
 const PhotoList = (props) => {
 
   const { 
-          finalList, // from HomeRoute
+          favouriteList, // from HomeRoute
           updateFavouriteList, // from both
           setClickedPhoto, // from HomeRoute
           input // from Modal
@@ -27,7 +27,7 @@ const PhotoList = (props) => {
             photo={photo}
             setClickedPhoto={setClickedPhoto}
             updateFavouriteList={updateFavouriteList}
-            finalList={finalList}
+            finalList={favouriteList}
             imageSource={photo.urls.full}
             username={photo.user.username}
             profile={photo.user.profile}
