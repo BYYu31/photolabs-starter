@@ -8,7 +8,7 @@ const PhotoListItem = (props) => {
   const { 
           photo, 
           setClickedPhoto, 
-          favouriteList, 
+          updateFavouriteList, 
           finalList,
           imageSource, 
           username, 
@@ -20,7 +20,7 @@ const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
       {<PhotoFavButton 
-        favouriteList={favouriteList} 
+        favouriteList={updateFavouriteList} 
         finalList={finalList}
         photo={photo}
       />}

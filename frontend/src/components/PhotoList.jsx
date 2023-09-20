@@ -26,7 +26,7 @@ const PhotoList = (props) => {
             key={photo.id}
             photo={photo}
             setClickedPhoto={setClickedPhoto}
-            favouriteList={updateFavouriteList}
+            updateFavouriteList={updateFavouriteList}
             finalList={finalList}
             imageSource={photo.urls.full}
             username={photo.user.username}
