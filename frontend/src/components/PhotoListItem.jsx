@@ -20,7 +20,7 @@ const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
       {<PhotoFavButton 
-        favouriteList={updateFavouriteList} 
+        updateFavouriteList={updateFavouriteList} 
         finalList={finalList}
         photo={photo}
       />}

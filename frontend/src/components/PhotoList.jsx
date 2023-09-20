@@ -10,7 +10,7 @@ const PhotoList = (props) => {
 
   const { 
           finalList, // from HomeRoute
-          updateFavouriteList, // from HomeRoute
+          updateFavouriteList, // from both
           setClickedPhoto, // from HomeRoute
           input // from Modal
         } = props;

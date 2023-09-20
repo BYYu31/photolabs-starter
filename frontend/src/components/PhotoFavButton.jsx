@@ -7,7 +7,7 @@ function PhotoFavButton(props) {
 
   const { 
           photo, 
-          favouriteList,
+          updateFavouriteList,
           finalList          
         } = props;
 
@@ -24,7 +24,7 @@ function PhotoFavButton(props) {
 
   return (
     <div className="photo-list__fav-icon" onClick={toggleFavourite}>
-      <div className="photo-list__fav-icon-svg" onClick={() => favouriteList(photo)}>
+      <div className="photo-list__fav-icon-svg" onClick={() => updateFavouriteList(photo)}>
       <FavIcon selected={includedInList}/>
       </div>
     </div>
