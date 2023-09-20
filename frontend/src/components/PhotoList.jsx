@@ -9,10 +9,10 @@ import "../styles/PhotoList.scss";
 const PhotoList = (props) => {
 
   const { 
-          finalList, 
-          updateFavouriteList, 
-          setClickedPhoto, 
-          input 
+          finalList, // from HomeRoute
+          updateFavouriteList, // from HomeRoute
+          setClickedPhoto, // from HomeRoute
+          input // from Modal
         } = props;
 
   const photoRender = photos || Object.values(input);
