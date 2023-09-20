@@ -9,7 +9,7 @@ const PhotoListItem = (props) => {
           photo, 
           setClickedPhoto, 
           updateFavouriteList, 
-          finalList,
+          favouriteList,
           imageSource, 
           username, 
           profile,
@@ -21,7 +21,7 @@ const PhotoListItem = (props) => {
     <div className="photo-list__item">
       {<PhotoFavButton 
         updateFavouriteList={updateFavouriteList} 
-        finalList={finalList}
+        finalList={favouriteList}
         photo={photo}
       />}
       {<img className="photo-list__image" src={imageSource} onClick={() => setClickedPhoto(photo)}></img>}
