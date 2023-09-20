@@ -14,6 +14,17 @@ const App = (props) => {
   // this is the function to close the modal
   const removeClickedPhoto = () => setClickedPhoto();
 
+  // this is to update the favourite list
+  const updateFavouriteList = photo => {
+    if (favouriteList.includes(photo)) {
+      setFavouriteList(prev => [...prev].filter(input => input !== photo));
+      setNewFavourite(false);
+    } else {
+      setFavouriteList(prev => [...prev, photo]);
+      setNewFavourite(true);
+    }
+  }
+
   const favouriteNumberLength = favouriteList.length;
 
   // use ApplicationData hook
@@ -37,6 +48,7 @@ const App = (props) => {
         setClickedPhoto={setClickedPhoto}
         favouriteList={favouriteList}
         setFavouriteList={setFavouriteList}
+        updateFavouriteList={updateFavouriteList}
         newFavourite={newFavourite}
         setNewFavourite={setNewFavourite}
       />
@@ -46,6 +58,7 @@ const App = (props) => {
         removeClickedPhoto={removeClickedPhoto}
         favouriteList={favouriteList}
         setFavouriteList={setFavouriteList}
+        updateFavouriteList={updateFavouriteList}
         newFavourite={newFavourite}
         setNewFavourite={setNewFavourite}
       />}

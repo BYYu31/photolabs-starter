@@ -9,22 +9,13 @@ const HomeRoute = (props) => {
           setClickedPhoto, 
           favouriteList, 
           setFavouriteList, 
+          updateFavouriteList,
           newFavourite, 
           setNewFavourite
         } = props;
 
   // const [favouriteList, setFavouriteList] = useState([]);
   // const [newFavourite, setNewFavourite] = useState(false);
-
-  const updateFavouriteList = photo => {
-    if (favouriteList.includes(photo)) {
-      setFavouriteList(prev => [...prev].filter(input => input !== photo));
-      setNewFavourite(false);
-    } else {
-      setFavouriteList(prev => [...prev, photo]);
-      setNewFavourite(true);
-    }
-  }
 
   return (
     <div className="home-route">

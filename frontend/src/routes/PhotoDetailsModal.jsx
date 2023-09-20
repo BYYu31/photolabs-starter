@@ -12,21 +12,12 @@ const PhotoDetailsModal = (props) => {
           clickedPhoto,
           favouriteList, 
           setFavouriteList, 
+          updateFavouriteList,
           newFavourite, 
           setNewFavourite
         } = props;
 
   const { location, similar_photos, urls, user } = clickedPhoto;
-
-  const updateFavouriteList = photo => {
-    if (favouriteList.includes(photo)) {
-      setFavouriteList(prev => [...prev].filter(input => input !== photo));
-      setNewFavourite(false);
-    } else {
-      setFavouriteList(prev => [...prev, photo]);
-      setNewFavourite(true);
-    }
-  }
 
   return (
     <div className="photo-details-modal">
