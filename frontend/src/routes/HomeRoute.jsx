@@ -13,7 +13,9 @@ const HomeRoute = (props) => {
           updateFavouriteList,
           newFavourite, 
           setNewFavourite,
-          topics
+          topics,
+          input
+        
         } = props;
 
   // const [favouriteList, setFavouriteList] = useState([]);
@@ -27,6 +29,7 @@ const HomeRoute = (props) => {
           topics={topics}
         />
         <PhotoList 
+          input={input}
           favouriteList={favouriteList}
           updateFavouriteList={updateFavouriteList} 
           setClickedPhoto={setClickedPhoto}

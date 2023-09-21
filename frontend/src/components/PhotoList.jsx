@@ -15,9 +15,13 @@ const PhotoList = (props) => {
           input // from Modal
         } = props;
 
-  const photoRender = photos || Object.values(input);
+  const photoRender = input ? Object.values(input) : photos;
 
+  if (input) {
 
+    console.log(Object.values(input));
+
+  }
   return (
     <ul className="photo-list">
       {photoRender.map(photo => {
