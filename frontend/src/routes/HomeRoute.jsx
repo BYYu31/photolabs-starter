@@ -12,7 +12,8 @@ const HomeRoute = (props) => {
           setFavouriteList, 
           updateFavouriteList,
           newFavourite, 
-          setNewFavourite
+          setNewFavourite,
+          topics
         } = props;
 
   // const [favouriteList, setFavouriteList] = useState([]);
@@ -20,7 +21,11 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-        <TopNavigation newFavourite={newFavourite} favouriteNumber={favouriteNumber}/>
+        <TopNavigation 
+          newFavourite={newFavourite} 
+          favouriteNumber={favouriteNumber}
+          topics={topics}
+        />
         <PhotoList 
           favouriteList={favouriteList}
           updateFavouriteList={updateFavouriteList} 

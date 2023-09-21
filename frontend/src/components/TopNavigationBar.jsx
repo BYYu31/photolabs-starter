@@ -5,12 +5,16 @@ import '../styles/TopNavigationBar.scss'
 
 const TopNavigation = (props) => {
 
-  const { newFavourite, favouriteNumber } = props;
+  const { 
+          newFavourite, 
+          favouriteNumber, 
+          topics 
+        } = props;
 
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList/>
+      <TopicList topics={topics}/>
       <FavBadge isFavPhotoExist={newFavourite} favouriteNumber={favouriteNumber}/>
     </div>
     

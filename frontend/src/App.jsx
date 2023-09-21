@@ -4,6 +4,8 @@ import HomeRoute from 'routes/HomeRoute';
 import PhotoDetailsModal from 'routes/PhotoDetailsModal';
 import './App.scss';
 
+import topics from 'mocks/topics';
+
 // Note: Rendering a single component to build components in isolation
 const App = (props) => {
 
@@ -31,6 +33,7 @@ const App = (props) => {
         newFavourite={newFavourite}
         setNewFavourite={setNewFavourite}
         favouriteNumber={favouriteNumber}
+        topics={topics} // data from mock
       />
       {clickedPhoto && 
       <PhotoDetailsModal 
