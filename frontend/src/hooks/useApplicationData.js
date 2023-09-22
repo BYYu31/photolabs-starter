@@ -34,9 +34,6 @@
 //   }
 // }
 
-// import mock data
-import topics from 'mocks/topics';
-// import photos from 'mocks/photos';
 import { useEffect, useReducer } from "react";
 
 const initialState = {
@@ -44,7 +41,8 @@ const initialState = {
   favouriteList: [],
   newFavourite: false,
   topicsData: [],
-  photoData: []
+  photoData: [],
+  topicCategory: 0
 };
 
 const reducer = (state, action) => {
@@ -55,6 +53,8 @@ const reducer = (state, action) => {
       return { ...state, topicsData: action.payload};
     case "SET_CLICKED_PHOTO":
       return { ...state, clickedPhoto: action.payload };
+    case "SET_TOPIC_CATEGORY":
+      return { ...state, topicCategory: action.payload};
     case "SET_FAVOURITE_LIST":
       return { ...state, favouriteList: action.payload };
     case "SET_NEW_FAVOURITE":
@@ -85,21 +85,30 @@ export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    fetch('http://localhost:8001/api/photos')
+    let url = 'http://localhost:8001/api/photos'
+
+    if (state.topicCategory) {
+      url = 'http://localhost:8001/api/topics/photos' + `/${state.topicCategory}`
+    }
+    fetch(url)
       .then(res => res.json())
       .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
-  },[])
+  },[state.topicCategory])
 
   useEffect(() => {
     fetch('http://localhost:8001/api/topics')
       .then(res => res.json())
       .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data}))
-  })
+  },[])
 
   return {
     clickedPhoto: state.clickedPhoto,
     setClickedPhoto: (photo) => {
       dispatch({ type: "SET_CLICKED_PHOTO", payload: photo });
+    },
+    topicCategory: state.topicCategory,
+    setTopicCategory: category => {
+      dispatch({ type: "SET_TOPIC_CATEGORY", payload: category});
     },
     favouriteList: state.favouriteList,
     setFavouriteList: (list) => {

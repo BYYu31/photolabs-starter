@@ -4,7 +4,7 @@ import "../styles/TopicList.scss";
 
 const TopicList = (props) => {
 
-  const { topics } = props;
+  const { topics, setTopicCategory } = props;
 
   return (
     <div className="top-nav-bar__topic-list">
@@ -12,7 +12,9 @@ const TopicList = (props) => {
         return (
           <TopicListItem 
           key={topic.id}
+          id={topic.id}
           label={topic.title}
+          setTopicCategory={setTopicCategory}
           />
         ) 
       })}

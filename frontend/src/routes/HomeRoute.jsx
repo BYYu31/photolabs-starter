@@ -14,8 +14,8 @@ const HomeRoute = (props) => {
           newFavourite, 
           setNewFavourite,
           topics,
-          input
-        
+          input,
+          setTopicCategory        
         } = props;
 
   // const [favouriteList, setFavouriteList] = useState([]);
@@ -27,6 +27,7 @@ const HomeRoute = (props) => {
           newFavourite={newFavourite} 
           favouriteNumber={favouriteNumber}
           topics={topics}
+          setTopicCategory={setTopicCategory}
         />
         <PhotoList 
           input={input}

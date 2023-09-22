@@ -13,6 +13,7 @@ const App = (props) => {
     setClickedPhoto,
     favouriteList,
     setFavouriteList,
+    setTopicCategory,
     newFavourite,
     setNewFavourite,
     removeClickedPhoto,
@@ -35,6 +36,7 @@ const App = (props) => {
         setNewFavourite={setNewFavourite}
         favouriteNumber={favouriteNumber}
         topics={topics} // data from mock
+        setTopicCategory={setTopicCategory}
       />
       {clickedPhoto && 
       <PhotoDetailsModal 
