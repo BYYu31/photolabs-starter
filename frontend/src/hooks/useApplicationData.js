@@ -84,6 +84,7 @@ const reducer = (state, action) => {
 export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  // render photo data && based on topic clicked
   useEffect(() => {
     let url = 'http://localhost:8001/api/photos'
 
@@ -95,6 +96,7 @@ export default function useApplicationData() {
       .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
   },[state.topicCategory])
 
+  // render topic data
   useEffect(() => {
     fetch('http://localhost:8001/api/topics')
       .then(res => res.json())
