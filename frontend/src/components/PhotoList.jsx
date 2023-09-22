@@ -17,11 +17,6 @@ const PhotoList = (props) => {
 
   const photoRender = input ? Object.values(input) : photos;
 
-  if (input) {
-
-    console.log(Object.values(input));
-
-  }
   return (
     <ul className="photo-list">
       {photoRender.map(photo => {

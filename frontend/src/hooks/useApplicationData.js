@@ -34,16 +34,25 @@
 //   }
 // }
 
-import { useReducer } from "react";
+// import mock data
+import topics from 'mocks/topics';
+// import photos from 'mocks/photos';
+import { useEffect, useReducer } from "react";
 
 const initialState = {
   clickedPhoto: undefined,
   favouriteList: [],
   newFavourite: false,
+  topicsData: [],
+  photoData: []
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_PHOTO_DATA':
+      return { ...state, photoData: action.payload};
+    case 'SET_TOPIC_DATA':
+      return { ...state, topicsData: action.payload};
     case "SET_CLICKED_PHOTO":
       return { ...state, clickedPhoto: action.payload };
     case "SET_FAVOURITE_LIST":
@@ -75,6 +84,18 @@ const reducer = (state, action) => {
 export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    fetch('http://localhost:8001/api/photos')
+      .then(res => res.json())
+      .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
+  },[])
+
+  useEffect(() => {
+    fetch('http://localhost:8001/api/topics')
+      .then(res => res.json())
+      .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data}))
+  })
+
   return {
     clickedPhoto: state.clickedPhoto,
     setClickedPhoto: (photo) => {
@@ -95,5 +116,7 @@ export default function useApplicationData() {
       dispatch({ type: "UPDATE_FAVOURITE_LIST", payload: { photo } });
     },
     favouriteNumber: state.favouriteList.length,
+    topics: state.topicsData,
+    photos: state.photoData
   };
 }
