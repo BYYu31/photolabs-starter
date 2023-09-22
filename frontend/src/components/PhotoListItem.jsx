@@ -6,6 +6,7 @@ const PhotoListItem = (props) => {
 
   const { 
           photo, 
+          clickedPhoto,
           setClickedPhoto, 
           updateFavouriteList, 
           favouriteList,
@@ -16,14 +17,16 @@ const PhotoListItem = (props) => {
           country 
         } = props;
 
+        const clickedOrNot = clickedPhoto && photo.id === clickedPhoto.id
+
   return (
-    <div className="photo-list__item">
+    <div className={clickedOrNot ? "photo-list__item-modal" : "photo-list__item"}>
       {<PhotoFavButton 
         updateFavouriteList={updateFavouriteList} 
         favouriteList={favouriteList}
         photo={photo}
       />}
-      {<img className="photo-list__image" src={imageSource} onClick={() => setClickedPhoto(photo)}></img>}
+      {<img className={clickedOrNot ? "photo-list__image-modal" : "photo-list__image"} src={imageSource} onClick={() => setClickedPhoto(photo)}></img>}
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={profile}></img>
         <div className="photo-list__user-info">

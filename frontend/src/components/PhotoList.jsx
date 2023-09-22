@@ -8,6 +8,7 @@ const PhotoList = (props) => {
   const { 
           favouriteList, // from both
           updateFavouriteList, // from both
+          clickedPhoto,
           setClickedPhoto, // from HomeRoute
           input // takes either similar_photos or photos from api
         } = props;
@@ -20,6 +21,7 @@ const PhotoList = (props) => {
         return (
           <PhotoListItem
             key={photo.id}
+            clickedPhoto={clickedPhoto}
             photo={photo}
             setClickedPhoto={setClickedPhoto}
             updateFavouriteList={updateFavouriteList}
