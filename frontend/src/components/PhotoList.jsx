@@ -8,7 +8,7 @@ const PhotoList = (props) => {
   const { 
           favouriteList, // from both
           updateFavouriteList, // from both
-          clickedPhoto,
+          clickedPhoto, // from both
           setClickedPhoto, // from HomeRoute
           input // takes either similar_photos or photos from api
         } = props;
