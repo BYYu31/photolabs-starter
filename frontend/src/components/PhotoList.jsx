@@ -1,18 +1,15 @@
 import React from "react";
 import PhotoListItem from "./PhotoListItem";
 
-// mock data
-import photos from "../mocks/photos";
-
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
 
   const { 
-          favouriteList, // from HomeRoute
+          favouriteList, // from both
           updateFavouriteList, // from both
           setClickedPhoto, // from HomeRoute
-          input // from Modal
+          input // takes either similar_photos or photos from api
         } = props;
 
   const photoRender = Object.values(input);

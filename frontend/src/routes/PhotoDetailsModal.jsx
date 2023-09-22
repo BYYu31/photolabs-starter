@@ -1,5 +1,4 @@
 import React from 'react';
-import PhotoListItem from 'components/PhotoListItem';
 import PhotoList from 'components/PhotoList';
 
 import '../styles/PhotoDetailsModal.scss'
@@ -37,9 +36,7 @@ const PhotoDetailsModal = (props) => {
           input={similar_photos}
           updateFavouriteList={updateFavouriteList} 
           favouriteList={favouriteList}
-          // photoSelected={clickedPhoto} did not use this state when and image is clicked
         />
-
     </div>
   )
 };
