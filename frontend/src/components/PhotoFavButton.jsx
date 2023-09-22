@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
@@ -12,11 +12,6 @@ function PhotoFavButton(props) {
         } = props;
 
   const includedInList = favouriteList.includes(photo.id) ? true : false;
-
-  // const [favourite, setFavourite] = useState(false);
-  
-  // const toggleFavourite = () => setFavourite(!favourite)
-  // also added onClick={toggleFavourite} superceded
   
   return (
     <div className="photo-list__fav-icon">

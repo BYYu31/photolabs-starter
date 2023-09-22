@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import PhotoFavButton from "./PhotoFavButton";
 import "../styles/PhotoListItem.scss";
 
 const PhotoListItem = (props) => {
-  /* Insert React */
 
   const { 
           photo, 

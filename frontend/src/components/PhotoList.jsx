@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PhotoListItem from "./PhotoListItem";
 
 // mock data
@@ -15,7 +15,7 @@ const PhotoList = (props) => {
           input // from Modal
         } = props;
 
-  const photoRender = input ? Object.values(input) : photos;
+  const photoRender = Object.values(input);
 
   return (
     <ul className="photo-list">
