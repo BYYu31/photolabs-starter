@@ -11,10 +11,7 @@ const PhotoDetailsModal = (props) => {
           removeClickedPhoto, 
           clickedPhoto,
           favouriteList, 
-          setFavouriteList, // not used
-          updateFavouriteList,
-          newFavourite, // not used
-          setNewFavourite // not used
+          updateFavouriteList
         } = props;
 
   const { location, similar_photos, urls, user } = clickedPhoto;

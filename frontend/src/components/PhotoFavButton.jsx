@@ -11,7 +11,7 @@ function PhotoFavButton(props) {
           favouriteList          
         } = props;
 
-  const includedInList = favouriteList.includes(photo) ? true : false;
+  const includedInList = favouriteList.includes(photo.id) ? true : false;
 
   // const [favourite, setFavourite] = useState(false);
   

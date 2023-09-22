@@ -1,4 +1,4 @@
-import React,  { useState } from 'react';
+import React from 'react';
 import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from 'components/PhotoList';
 import '../styles/HomeRoute.scss';
@@ -9,17 +9,12 @@ const HomeRoute = (props) => {
           setClickedPhoto, 
           favouriteList, 
           favouriteNumber,
-          setFavouriteList, 
           updateFavouriteList,
           newFavourite, 
-          setNewFavourite,
           topics,
           input,
           setTopicCategory        
         } = props;
-
-  // const [favouriteList, setFavouriteList] = useState([]);
-  // const [newFavourite, setNewFavourite] = useState(false);
 
   return (
     <div className="home-route">

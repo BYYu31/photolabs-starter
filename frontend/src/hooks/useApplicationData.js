@@ -63,16 +63,16 @@ const reducer = (state, action) => {
       return { ...state, clickedPhoto: undefined };
     case "UPDATE_FAVOURITE_LIST":
       const { photo } = action.payload;
-      if (state.favouriteList.includes(photo)) {
+      if (state.favouriteList.includes(photo.id)) {
         return {
           ...state,
-          favouriteList: state.favouriteList.filter((input) => input !== photo),
+          favouriteList: state.favouriteList.filter((input) => input !== photo.id),
           newFavourite: false,
         };
       } else {
         return {
           ...state,
-          favouriteList: [...state.favouriteList, photo],
+          favouriteList: [...state.favouriteList, photo.id],
           newFavourite: true,
         };
       }
