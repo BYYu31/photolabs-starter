@@ -24,12 +24,14 @@ const HomeRoute = (props) => {
           topics={topics}
           setTopicCategory={setTopicCategory}
         />
+    <div className='photo-list-home'>
         <PhotoList 
           input={input}
           favouriteList={favouriteList}
           updateFavouriteList={updateFavouriteList} 
           setClickedPhoto={setClickedPhoto}
         />
+    </div>
     </div>
   );
 };

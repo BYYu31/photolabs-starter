@@ -12,7 +12,7 @@ const TopicListItem = (props) => {
 
   return (
     <div className="topic-list__item">
-      <div onClick={() => setTopicCategory(id)}>{label}</div>
+      <div onClick={() => setTopicCategory(id)}><span>{label}</span></div>
     </div>
   );
 };
